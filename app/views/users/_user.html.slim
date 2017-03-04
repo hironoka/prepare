@@ -1,0 +1,9 @@
+ul.user
+  li.col-xs-5
+    = link_to "#{user.last_name } #{user.first_name}", user_path(user.id)
+  li.col-xs-3
+    = user.birthday
+  li.col-xs-1 1ヶ月
+  li.col-xs-1 2週間
+  li.col-xs-1 1週間
+  li.col-xs-1 3日
