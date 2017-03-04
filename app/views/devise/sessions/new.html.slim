@@ -15,4 +15,5 @@ h2
       = f.label :remember_me
   .actions
     = f.submit "Log in"
+/ = link_to "Facebookログイン", user_facebook_omniauth_authorize_path(:facebook)
 = render "devise/shared/links"
