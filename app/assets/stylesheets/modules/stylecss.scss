@@ -5,3 +5,7 @@ ul {
 li {
   float: left;
 }
+
+.field {
+  @include clearfix();
+}

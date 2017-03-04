@@ -3,4 +3,5 @@
 @import "./config/variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "./mixin/stylecss"
+@import "./modules/stylecss";
+// @import "./modules/flat-ui.scss";
