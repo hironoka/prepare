@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     user = User.find(params[:user_id])
     Comment.create(comment_params)
-    Slack.chat_postMessage text: "すごすぎでしょこれ", username: "Railsアプリくん", channel: "#general"
+    Slack.chat_postMessage text: "comment投稿だん", username: "Railsアプリくん", channel: "#general"
     redirect_to user_path(params[:user_id])
   end
 
