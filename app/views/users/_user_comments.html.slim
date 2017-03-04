@@ -1,0 +1,12 @@
+h4 コメント一覧
+js-comments
+  = render @comments
+.col-md-8
+  = form_for [@user, @comment], html: { class: "form-inline"} do |f|
+    = f.hidden_field :user_id, value: current_user.id
+    = f.hidden_field :birthday_user_id, value: @user.id
+    .row
+      .form-list
+        = f.text_area :body, placeholder: 'put a comment', rows: ''
+      .form-list
+        = f.submit "Comment", class: "btn"

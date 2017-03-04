@@ -1,0 +1,8 @@
+= link_to 'indexへ', root_path
+
+.user_profile
+  h1
+    = "#{@user.last_name }#{@user.first_name}さんのページ"
+  
+.user-comments
+  = user_comments_result(@user)
