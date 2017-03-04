@@ -38,6 +38,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'devise-i18n'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
 
