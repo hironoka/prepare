@@ -5,9 +5,9 @@ js-comments
   = form_for [@user, @comment], html: { class: "form-inline"} do |f|
     = f.hidden_field :user_id, value: current_user.id
     = f.hidden_field :birthday_user_id, value: @user.id
-    .row
+    .form
       .form-list
-        = f.text_area :body, placeholder: 'put a comment', rows: ''
+        = f.text_field :body, placeholder: 'put a comment', class: 'form-control'
       .form-list
         = f.file_field :image
       .form-list
