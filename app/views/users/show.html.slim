@@ -1,8 +1,9 @@
-= link_to 'indexへ', root_path
+.container
+  = link_to 'indexへ', root_path, class: 'btn btn-primary'
 
-.user_profile
-  h1
-    = "#{@user.last_name }#{@user.first_name}さんのページ"
-  
-.user-comments
-  = user_comments_result(@user)
+  .user_profile
+    h1.center-block
+      = "#{@user.last_name }#{@user.first_name}さんのページ"
+    
+  .user-comments
+    = user_comments_result(@user)

@@ -3,6 +3,7 @@ class RemindsController < ApplicationController
   def create
     @remind = Remind.new(remind_params)
     if @remind.save
+      Slack.chat_postMessage text: "誕生日のリマインド設定をしました", username: "誕生日Bot", channel: "#general"
       redirect_to :root
     end
   end

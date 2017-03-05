@@ -1,10 +1,10 @@
-ul
-  li.col-xs-2
-    = comment.user.last_name
-  li.col-xs-5
+.panel.panel-default
+  .panel-heading
+    ul.list-inline
+      li= comment.comment_day
+      li= comment.user.last_name
+  .panel-body
     - if comment.body
       = comment.body
     - if comment.image
       = image_tag(comment.image)
-  li.col-xs-5
-    = comment.created_at

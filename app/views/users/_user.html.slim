@@ -1,33 +1,33 @@
-ul.user
+ul.user.well.well-sm.text-primary
   li.col-xs-5
     = link_to "#{user.last_name } #{user.first_name}", user_path(user.id)
   li.col-xs-3
-    = user.birthday
+    = user.birth_day
 
   li.col-xs-1
     = form_for @remind, html: { class: "form-inline"} do |f|
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :birthday_user_id, value: user.id
       = f.hidden_field :remind_date, value: user.birthday - 1.month
-      = f.submit '1ヶ月', class: 'btn new_remind'
+      = f.submit '1ヶ月', class: 'btn new_remind btn-info'
 
   li.col-xs-1
     = form_for @remind, html: { class: "form-inline"} do |f|
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :birthday_user_id, value: user.id
       = f.hidden_field :remind_date, value: user.birthday - 2.weeks
-      = f.submit '2週間', class: 'btn new_remind'
+      = f.submit '2週間', class: 'btn new_remind btn-success'
 
   li.col-xs-1
     = form_for @remind, html: { class: "form-inline"} do |f|
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :birthday_user_id, value: user.id
       = f.hidden_field :remind_date, value: user.birthday - 1.week
-      = f.submit '1週間', class: 'btn new_remind'
+      = f.submit '1週間', class: 'btn new_remind btn-warning'
         
   li.col-xs-1
     = form_for @remind, html: { class: "form-inline"} do |f|
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :birthday_user_id, value: user.id
       = f.hidden_field :remind_date, value: user.birthday - 3.days
-      = f.submit '3日', class: 'btn new_remind'
+      = f.submit '3日', class: 'btn new_remind btn-danger'

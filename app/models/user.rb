@@ -24,6 +24,10 @@ class User < ApplicationRecord
     user
   end
 
+  def birth_day
+    birthday.strftime("%m月%d日")
+  end
+
   private
 
   def self.dummy_email(auth)
