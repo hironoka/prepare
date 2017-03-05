@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :messages
   has_many :reminds
 
+  validates :first_name, :last_name, :birthday, presence: true
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 

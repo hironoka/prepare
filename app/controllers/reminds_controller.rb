@@ -3,13 +3,6 @@ class RemindsController < ApplicationController
   def create
     @remind = Remind.new(remind_params)
     if @remind.save
-      # respond_to do |format|
-      #   format.html
-      #   format.json
-      #    render json: { user_id: @remind.user_id,
-      #                    birthday_user_id: @remind.birthday_user_id,
-      #                    remind_date: @remind.remind_date }
-      # end
       redirect_to :root
     end
   end
@@ -18,7 +11,7 @@ class RemindsController < ApplicationController
     today = Date.today
     @reminds = Remind.where(remind_date: today)
     if @reminds.present?
-      @reminds.each.do |remind|
+      @reminds.each do |remind|
         notify_to_slack(remind)
       end
     end
@@ -41,6 +34,6 @@ class RemindsController < ApplicationController
 #{remind.remind_date}
   EOC
 
-  Slack.chat_postMessage text: text, username: "Opinion Notifier", channel: "#opinion"
-end
+  Slack.chat_postMessage text: text, username: "Opinion Notifier", channel: "#general"
+  end
 end
