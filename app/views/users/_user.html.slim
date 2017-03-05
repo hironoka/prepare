@@ -8,26 +8,26 @@ ul.user
     = form_for @remind, html: { class: "form-inline"} do |f|
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :birthday_user_id, value: user.id
-      = f.hidden_field :birthday, value: user.birthday - 1.month
-      = f.submit '1ヶ月', class: 'btn'
+      = f.hidden_field :remind_date, value: user.birthday - 1.month
+      = f.submit '1ヶ月', class: 'btn new_remind'
 
   li.col-xs-1
     = form_for @remind, html: { class: "form-inline"} do |f|
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :birthday_user_id, value: user.id
-      = f.hidden_field :birthday, value: user.birthday - 2.weeks
-      = f.submit '2週間', class: 'btn'
+      = f.hidden_field :remind_date, value: user.birthday - 2.weeks
+      = f.submit '2週間', class: 'btn new_remind'
 
   li.col-xs-1
     = form_for @remind, html: { class: "form-inline"} do |f|
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :birthday_user_id, value: user.id
-      = f.hidden_field :birthday, value: user.birthday - 1.week
-      = f.submit '1週間', class: 'btn'
+      = f.hidden_field :remind_date, value: user.birthday - 1.week
+      = f.submit '1週間', class: 'btn new_remind'
         
   li.col-xs-1
     = form_for @remind, html: { class: "form-inline"} do |f|
       = f.hidden_field :user_id, value: current_user.id
       = f.hidden_field :birthday_user_id, value: user.id
-      = f.hidden_field :birthday, value: user.birthday - 3.days
-      = f.submit '3日', class: 'btn'
+      = f.hidden_field :remind_date, value: user.birthday - 3.days
+      = f.submit '3日', class: 'btn new_remind'

@@ -9,4 +9,6 @@ js-comments
       .form-list
         = f.text_area :body, placeholder: 'put a comment', rows: ''
       .form-list
+        = f.file_field :image
+      .form-list
         = f.submit "Comment", class: "btn"

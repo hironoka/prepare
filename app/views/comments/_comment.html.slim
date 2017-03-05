@@ -2,6 +2,9 @@ ul
   li.col-xs-2
     = comment.user.last_name
   li.col-xs-5
-    = comment.body
+    - if comment.body
+      = comment.body
+    - if comment.image
+      = image_tag(comment.image)
   li.col-xs-5
     = comment.created_at
