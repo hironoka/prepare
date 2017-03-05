@@ -1,0 +1,11 @@
+ul {
+  @include clearfix();
+}
+
+li {
+  float: left;
+}
+
+.field {
+  @include clearfix();
+}

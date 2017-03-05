@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170304032610) do
+ActiveRecord::Schema.define(version: 20170304171313) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "body"
     t.string   "image"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "birthday_user_id"
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
@@ -33,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170304032610) do
   create_table "reminds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "birthday_user_id"
-    t.time     "remind_date"
+    t.datetime "remind_date"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["user_id"], name: "index_reminds_on_user_id", using: :btree
@@ -57,7 +58,7 @@ ActiveRecord::Schema.define(version: 20170304032610) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.date     "birthday"
+    t.datetime "birthday"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

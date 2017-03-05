@@ -1,1 +1,5 @@
-= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn'
+.container
+  = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+
+  h1 ユーザー一覧
+  = render @users
