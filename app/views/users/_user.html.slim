@@ -1,7 +1,7 @@
 ul.user.well.well-sm.text-primary
   li.col-xs-5
     = link_to "#{user.last_name } #{user.first_name}", user_path(user.id)
-  li.col-xs-3
+  li.col-xs-2
     = user.birth_day
 
   li.col-xs-1
@@ -31,3 +31,6 @@ ul.user.well.well-sm.text-primary
       = f.hidden_field :birthday_user_id, value: user.id
       = f.hidden_field :remind_date, value: user.birthday - 3.days
       = f.submit '3日', class: 'btn new_remind btn-danger'
+  - unless user == current_user
+    li.col-xs-1
+      = link_to '手紙', new_user_message_path(user.id), class: 'btn btn-primary'

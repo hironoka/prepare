@@ -1,0 +1,14 @@
+.container
+  = link_to 'indexへ', root_path, class: 'btn btn-primary'
+
+  .user_profile
+    h1.center-block
+      = "#{@birthday_user.last_name }#{@birthday_user.first_name}さんへのメッセージ"
+    .message-form
+    = form_for [@user, @message], html: { class: "form-inline"} do |f|
+      = f.hidden_field :user_id, value: current_user.id
+      .form
+        .form-list
+          = f.text_area :body, placeholder: 'put a message', class: 'form-control', row: 7
+        .form-list
+          = f.submit "Comment", class: "btn"

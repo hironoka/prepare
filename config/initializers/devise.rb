@@ -249,8 +249,8 @@ Devise.setup do |config|
   # up on your models and hooks.
 
 
-  # config.omniauth :facebook, Settings.facebook[:app_id], Settings.facebook[:app_secret], info_fields: 'first_name, last_name, gender'
-  config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], info_fields: 'first_name, last_name, gender'
+  config.omniauth :facebook, Settings.facebook[:app_id], Settings.facebook[:app_secret], info_fields: 'first_name, last_name, gender'
+  # config.omniauth :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET'], info_fields: 'first_name, last_name, gender'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
